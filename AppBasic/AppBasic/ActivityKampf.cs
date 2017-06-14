@@ -126,6 +126,7 @@ namespace AppBasic
         {
             if (gegner.Verteidigen(ausgewaehltesMonster.Angriff))
             {
+                AnzeigenLeben();
                 Textanzeigen("Dein Monster greift an",2000);
                 if (ausgewaehltesMonster.Verteidigen(gegner.Angriff))
                 {
@@ -143,7 +144,7 @@ namespace AppBasic
                             return;
                         }
                     }
-                    Textanzeigen("Du hast verloren", 2000);
+                    Textanzeigen("Du hast keine Monster mehr", 2000);
                     Beenden();
 
                 }
