@@ -132,28 +132,15 @@ namespace AppBasic
 
         }
 
-        private void Runter()
-        {
-            if (gezeigt < monsterauswahl.Length - 6)
-            {
-                monsteranzeige.RemoveAllViews();
-                gezeigt++;
-                for (int i = gezeigt; i < gezeigt + 5; i++)
-                {
-                    monsteranzeige.AddView(monsterauswahl[i].Button);
-                }
-            }
-        }
-
         private void Angriff()
         {
             if (gegner.Verteidigen(ausgewaehltesMonster.Angriff))
             {
                 AnzeigenLeben();
-                Textanzeigen("Dein Monster greift an",2000);
+                Textanzeigen("Dein Monster greift an: "+ausgewaehltesMonster.Angriff.Name,2000);
                 if (ausgewaehltesMonster.Verteidigen(gegner.Angriff))
                 {
-                    Textanzeigen("Das gegnerische Monster greift an", 2000);
+                    Textanzeigen("Das gegnerische Monster greift an: "+gegner.Angriff.Name, 2000);
                     AnzeigenLeben();
                 }
                 else
